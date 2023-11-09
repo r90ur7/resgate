@@ -30,26 +30,26 @@ body {
 }
 
 #jogador {
-  width: 256px;
-  height: 66px;
+  /* width: 256px;
+  height: 66px; */
   position: absolute;
   left: 8px;
   top: 179px;
-  background-image: url(../imgs/apache.png);
+  /* background-image: url(../imgs/apache.png); */
 }
 
 #inimigo1 {
-  width: 256px;
-  height: 66px;
+  /* width: 256px;
+  height: 107px; */
   position: absolute;
   left: 689px;
   top: 253px;
-  background-image: url(../imgs/inimigo1.png);
+  /* background-image: url(../imgs/inimigo1.png); */
 }
 
 #inimigo2 {
   width: 165px;
-  height: 70px;
+  height: 77px;
   position: absolute;
   left: 775px;
   top: 477px;
@@ -74,4 +74,39 @@ body {
   margin-top: 100px;
   text-align: center;
   padding: 10px;
+}
+.anima1 {
+  width: 226px;
+  height: 66px;
+  background-image: url(../imgs/helicoptero.png);
+  animation: play .5s steps(2) infinite;
+}
+
+@keyframes play {
+  from {background-position: 0px;}
+  to {background-position: -450px;}
+}
+
+.anima2 {
+  width: 256px;
+  height: 107px;
+  background-image: url(../imgs/inimigo1.png);
+  animation: play3 .5s steps(1) infinite;
+}
+
+@keyframes play3 {
+  from {background-position: 0px;}
+  to {background-position: -256px;}
+}
+
+.anima3 {
+  width: 44px;
+  height: 51px;
+  background-image: url(../imgs/amigo.png);
+  animation: play2 .9s steps(12) infinite;
+}
+
+@keyframes play2 {
+  from {background-position: 0px;}
+  to {background-position: -534px;}
 }
