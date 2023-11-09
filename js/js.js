@@ -7,12 +7,31 @@ function start() { // inicio start()
 
   // variáveis do jogo
   var jogo = {};
+  var TECLA = {
+    W: 87,
+    S: 83,
+    D: 68
+  }
+  jogo.pressionou = [];
+  // verifica se o usuário pressionou alguma tecla
+$(document).keydown(function (e) { 
+  jogo.pressionou[e.wich]=true;
+});
+
+$(document).keyup(function (e) {
+  jogo.pressionou[e.wich]=false
+});
+
+
+
+
 
   // game loop
   jogo.timer = setInterval(loop, 30);
 
   function loop() {
     movefundo();
+    movejogador();
   } // fim loop()
 
   function movefundo() {
@@ -20,5 +39,11 @@ function start() { // inicio start()
     $('#fundoGame').css("background-position", esquerda - 1);
   } // fim movefundo()
 
+  function movejogador(){
+    if(jogo.pressionou[TECLA.W]){
+      var topo = parseInt($("#jogador").css("top"));
+      $("#jogador").css("top", topo - 10);
+    }
+  }
 } // fim start()
 
